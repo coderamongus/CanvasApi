@@ -19,8 +19,13 @@ const player = {
     isAlive: true,
 };
 
+const movingPlatforms = [
+    { x: 200, y: 100, width: 200, height: 20, color: 'purple', velocityX: 2 },
+    { x: 500, y: 50, width: 150, height: 20, color: 'purple', velocityX: 1.5 },
+];
+
 let level = 0;
-let greenGatePosition = { x: 50, y: 50 }; 
+let greenGatePosition = { x: 50, y: 50 };
 
 const boxes = [
     [
@@ -38,7 +43,8 @@ const boxes = [
         { x: 600, y: 150, width: 200, height: 10, color: 'red' },
         { x: 850, y: 360, width: 50, height: 20, color: 'red' },
         { x: 850, y: 290, width: 50, height: 20, color: 'red' },
-        { x: 100, y: 230, width: 50, height: 50, color: 'green' }, //x: 100, y: 230, normaalit
+        { x: 100, y: 230, width: 50, height: 50, color: 'green' },
+        movingPlatforms[0],
     ],
     [
         { x: 1, y: 1, width: 1600, height: 20, color: 'brown' },
@@ -53,6 +59,12 @@ const boxes = [
         { x: 500, y: 200, width: 150, height: 20, color: 'brown ' },
         { x: 1200, y: 1, width: 50, height: 300, color: 'brown ' },
         { x: 0, y: 20, width: 1200, height: 10, color: 'red' },
+        movingPlatforms[1], 
+    ],
+    [
+        { x: 1, y: 1, width: 1600, height: 20, color: 'brown' },
+        { x: 1, y: 380, width: 1600, height: 20, color: 'brown' },
+        movingPlatforms[2], 
     ],
 ];
 
@@ -207,6 +219,16 @@ document.addEventListener('keyup', (event) => {
 
 ctx.transform(1, 0, 0, -1, 0, canvas.height);
 
+function updateMovingPlatforms() {
+    for (const movingPlatform of movingPlatforms) {
+        movingPlatform.x += movingPlatform.velocityX;
+
+        if (movingPlatform.x < 0 || movingPlatform.x + movingPlatform.width > canvas.width) {
+            movingPlatform.velocityX *= -1;
+        }
+    }
+}
+
 function gameLoop() {
     if (!player.isAlive) {
         if (!isDeathScreenVisible) {
@@ -214,7 +236,7 @@ function gameLoop() {
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = 'white';
             ctx.font = '30px Arial';
-            showRespawnMessage(); 
+            showRespawnMessage();
             isDeathScreenVisible = true;
         }
         return;
@@ -224,7 +246,19 @@ function gameLoop() {
 
     if (isDeathScreenVisible) {
         isDeathScreenVisible = false;
-        hideRespawnMessage(); 
+        hideRespawnMessage();
+    }
+
+    updateMovingPlatforms();
+
+    if (boxes[level].some((entity) => entity === movingPlatforms[level])) {
+        ctx.fillStyle = movingPlatforms[level].color;
+        ctx.fillRect(
+            movingPlatforms[level].x,
+            movingPlatforms[level].y,
+            movingPlatforms[level].width,
+            movingPlatforms[level].height
+        );
     }
 
     if (player.isLeftKeyPressed) {
@@ -257,7 +291,7 @@ canvas.addEventListener('click', (event) => {
         resetPlayerPosition();
         isDeathScreenVisible = false;
         player.isAlive = true;
-        hideRespawnMessage(); 
+        hideRespawnMessage();
         requestAnimationFrame(gameLoop);
     }
 });
