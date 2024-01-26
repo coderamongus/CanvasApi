@@ -72,7 +72,8 @@ const boxes = [
         { x: 0, y: 20, width: 1200, height: 10, color: 'red' },
     ],
     [
-        {x: 1, y: 20, width: 1400, height: 20, color: 'red'},
+        {x: 1, y: 1, width: 1600, height: 20, color: 'brown'},
+        {x: 119, y: 20, width: 1281, height: 20, color: 'red'},
         {x: 1400, y: 20, width: 200, height: 20, color: 'brown'},
         { x: 1, y: 390, width: 1600, height: 20, color: 'brown' },
         { x: 1550, y: 90, width: 50, height: 20, color: 'brown' },
@@ -360,4 +361,8 @@ canvas.addEventListener('click', (event) => {
     }
 });
 
+function loadLevel(levelIndex) {
+    level = levelIndex;
+    resetPlayerPosition();
+}
 requestAnimationFrame(gameLoop);

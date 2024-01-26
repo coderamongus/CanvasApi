@@ -24,10 +24,24 @@
             text-align: center;
             display: none;
         }
+        #levelButtons {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        #levelButtons button {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
     <center>
+        <div id="levelButtons">
+            <button onclick="loadLevel(2)">Load Level 3</button>
+            <
+        </div>
         <canvas id="gameCanvas" width="1600" height="400"></canvas>
         <div id="respawnMessage">You died! Click anywhere to respawn.</div>
         <script src="platformer.js"></script>
