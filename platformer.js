@@ -29,10 +29,10 @@ const movingPlatform = {
 };
 
 const movingPlatform2 = {
-    x: 600,
-    y: 300,
-    width: 200,
-    height: 20,
+    x: 200,
+    y: 295,
+    width: 30,
+    height: 95,
     color: 'purple',
     velocityX: -2,
 };
