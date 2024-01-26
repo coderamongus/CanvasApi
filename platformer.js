@@ -33,7 +33,7 @@ const movingPlatform2 = {
     y: 295,
     width: 30,
     height: 95,
-    color: 'purple',
+    color: 'red',
     velocityX: -2,
 };
 
