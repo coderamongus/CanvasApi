@@ -328,7 +328,6 @@ function gameLoop() {
         ctx.fillRect(box.x, box.y, box.width, box.height);
     }
 
-    // Добавлено для отрисовки обеих платформ на третьем уровне
     if (level === 2) {
         ctx.fillStyle = movingPlatform.color;
         ctx.fillRect(movingPlatform.x, movingPlatform.y, movingPlatform.width, movingPlatform.height);
@@ -336,10 +335,9 @@ function gameLoop() {
         ctx.fillRect(movingPlatform2.x, movingPlatform2.y, movingPlatform2.width, movingPlatform2.height);
     }
 
-    // Заменен вызов requestAnimationFrame на setTimeout для управления частотой обновлений
     setTimeout(() => {
         requestAnimationFrame(gameLoop);
-    }, 1000 / 100); // 60 кадров в секунду
+    }, 1000 / 100); 
 }
 
 canvas.addEventListener('click', (event) => {
