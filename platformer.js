@@ -19,10 +19,22 @@ const player = {
     isAlive: true,
 };
 
-const movingPlatforms = [
-    { x: 200, y: 100, width: 200, height: 20, color: 'purple', velocityX: 2 },
-    { x: 500, y: 50, width: 150, height: 20, color: 'purple', velocityX: 1.5 },
-];
+const movingPlatform = {
+    x: 100,
+    y: 30,
+    width: 200,
+    height: 20,
+    color: 'purple',
+    velocityX: 2,
+};
+const movingPlatform2 = {
+    x: 600,
+    y: 300,
+    width: 200,
+    height: 20,
+    color: 'purple',
+    velocityX: -2,
+};
 
 let level = 0;
 let greenGatePosition = { x: 50, y: 50 };
@@ -44,7 +56,6 @@ const boxes = [
         { x: 850, y: 360, width: 50, height: 20, color: 'red' },
         { x: 850, y: 290, width: 50, height: 20, color: 'red' },
         { x: 100, y: 230, width: 50, height: 50, color: 'green' },
-        movingPlatforms[0],
     ],
     [
         { x: 1, y: 1, width: 1600, height: 20, color: 'brown' },
@@ -59,12 +70,37 @@ const boxes = [
         { x: 500, y: 200, width: 150, height: 20, color: 'brown ' },
         { x: 1200, y: 1, width: 50, height: 300, color: 'brown ' },
         { x: 0, y: 20, width: 1200, height: 10, color: 'red' },
-        movingPlatforms[1], 
     ],
     [
-        { x: 1, y: 1, width: 1600, height: 20, color: 'brown' },
-        { x: 1, y: 380, width: 1600, height: 20, color: 'brown' },
-        movingPlatforms[2], 
+        {x: 1, y: 20, width: 1400, height: 20, color: 'red'},
+        {x: 1400, y: 20, width: 200, height: 20, color: 'brown'},
+        { x: 1, y: 390, width: 1600, height: 20, color: 'brown' },
+        { x: 1550, y: 90, width: 50, height: 20, color: 'brown' },
+        { x: 1350, y: 30, width: 120, height: 20, color: 'brown' },
+        { x: 1, y: 30, width: 150, height: 20, color: 'brown' },
+        { x: 1200, y: 40, width: 50, height: 140, color: 'brown' },
+        { x: 1500, y: 325, width: 50, height: 50, color: 'green' },
+        { x: 1250, y: 100, width: 50, height: 20, color: 'brown' },
+        { x: 1350, y: 140, width: 100, height: 20, color: 'red' },
+        { x: 1200, y: 300, width: 400, height: 20, color: 'brown' },
+        { x: 1450, y: 160, width: 50, height: 20, color: 'brown' },
+        { x: 1150, y: 170, width: 125, height: 20, color: 'brown' },
+        { x: 150, y: 100, width: 50, height: 20, color: 'brown' },
+        { x: 240, y: 150, width: 50, height: 20, color: 'brown' },
+        { x: 195, y: 155, width: 50, height: 20, color: 'red' },
+        { x: 400, y: 90, width: 50, height: 150, color: 'brown' },
+        { x: 600, y: 50, width: 50, height: 60, color: 'red' },
+        { x: 900, y: 50, width: 50, height: 60, color: 'red' },
+        { x: 250, y: 250, width: 90, height: 20, color: 'red' },
+        { x: 20, y: 210, width: 100, height: 20, color: 'brown' },
+        { x: 400, y: 235, width: 50, height: 60, color: 'brown' },
+        { x: 200, y: 275, width: 50, height: 20, color: 'brown' },
+        { x: 900, y: 320, width: 50, height: 20, color: 'red' },
+        { x: 750, y: 370, width: 50, height: 20, color: 'red' },
+        { x: 600, y: 320, width: 50, height: 20, color: 'red' },
+        { x: 20, y: 280, width: 70, height: 20, color: 'red' },
+        { x: 1, y: 320, width: 150, height: 30, color: 'red' },
+        movingPlatform, movingPlatform2
     ],
 ];
 
@@ -219,13 +255,32 @@ document.addEventListener('keyup', (event) => {
 
 ctx.transform(1, 0, 0, -1, 0, canvas.height);
 
-function updateMovingPlatforms() {
-    for (const movingPlatform of movingPlatforms) {
-        movingPlatform.x += movingPlatform.velocityX;
+function updateMovingPlatform() {
+    movingPlatform.x += movingPlatform.velocityX;
 
-        if (movingPlatform.x < 0 || movingPlatform.x + movingPlatform.width > canvas.width) {
-            movingPlatform.velocityX *= -1;
-        }
+    if (movingPlatform.x < 0 || movingPlatform.x + movingPlatform.width > canvas.width) {
+        movingPlatform.velocityX *= -1;
+    }
+}
+function updateMovingPlatform2() {
+    movingPlatform2.x += movingPlatform2.velocityX;
+
+    if (movingPlatform2.x < 0 || movingPlatform2.x + movingPlatform2.width > canvas.width) {
+        movingPlatform2.velocityX *= -1;
+    }
+}
+
+
+function updateMovingPlatforms() {
+    movingPlatform.x += movingPlatform.velocityX;
+    movingPlatform2.x += movingPlatform2.velocityX;
+
+    if (movingPlatform.x < 0 || movingPlatform.x + movingPlatform.width > canvas.width) {
+        movingPlatform.velocityX *= -1;
+    }
+
+    if (movingPlatform2.x < 0 || movingPlatform2.x + movingPlatform2.width > canvas.width) {
+        movingPlatform2.velocityX *= -1;
     }
 }
 
@@ -249,17 +304,7 @@ function gameLoop() {
         hideRespawnMessage();
     }
 
-    updateMovingPlatforms();
-
-    if (boxes[level].some((entity) => entity === movingPlatforms[level])) {
-        ctx.fillStyle = movingPlatforms[level].color;
-        ctx.fillRect(
-            movingPlatforms[level].x,
-            movingPlatforms[level].y,
-            movingPlatforms[level].width,
-            movingPlatforms[level].height
-        );
-    }
+    updateMovingPlatforms(); 
 
     if (player.isLeftKeyPressed) {
         player.velocityX -= player.acceleration;
@@ -283,8 +328,29 @@ function gameLoop() {
         ctx.fillRect(box.x, box.y, box.width, box.height);
     }
 
-    requestAnimationFrame(gameLoop);
+    // Добавлено для отрисовки обеих платформ на третьем уровне
+    if (level === 2) {
+        ctx.fillStyle = movingPlatform.color;
+        ctx.fillRect(movingPlatform.x, movingPlatform.y, movingPlatform.width, movingPlatform.height);
+        ctx.fillStyle = movingPlatform2.color;
+        ctx.fillRect(movingPlatform2.x, movingPlatform2.y, movingPlatform2.width, movingPlatform2.height);
+    }
+
+    // Заменен вызов requestAnimationFrame на setTimeout для управления частотой обновлений
+    setTimeout(() => {
+        requestAnimationFrame(gameLoop);
+    }, 1000 / 100); // 60 кадров в секунду
 }
+
+canvas.addEventListener('click', (event) => {
+    if (isDeathScreenVisible) {
+        resetPlayerPosition();
+        isDeathScreenVisible = false;
+        player.isAlive = true;
+        hideRespawnMessage();
+        requestAnimationFrame(gameLoop);
+    }
+});
 
 canvas.addEventListener('click', (event) => {
     if (isDeathScreenVisible) {
