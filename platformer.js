@@ -33,7 +33,7 @@ const movingPlatform2 = {
     y: 295,
     width: 30,
     height: 95,
-    color: 'purple',
+    color: 'red',
     velocityX: -2,
 };
 
@@ -83,7 +83,7 @@ const boxes = [
         { x: 1500, y: 325, width: 50, height: 50, color: 'green' },
         { x: 1250, y: 100, width: 50, height: 20, color: 'brown' },
         { x: 1350, y: 140, width: 100, height: 20, color: 'red' },
-        { x: 1150, y: 295, width: 450, height: 30, color: 'brown' },
+        { x: 1090, y: 295, width: 510, height: 30, color: 'brown' },
         { x: 1450, y: 160, width: 50, height: 20, color: 'brown' },
         { x: 1150, y: 170, width: 125, height: 20, color: 'brown' },
         { x: 140, y: 100, width: 70, height: 30, color: 'brown' },
@@ -343,16 +343,6 @@ function gameLoop() {
         requestAnimationFrame(gameLoop);
     }, 1000 / 100); 
 }
-
-canvas.addEventListener('click', (event) => {
-    if (isDeathScreenVisible) {
-        resetPlayerPosition();
-        isDeathScreenVisible = false;
-        player.isAlive = true;
-        hideRespawnMessage();
-        requestAnimationFrame(gameLoop);
-    }
-});
 
 canvas.addEventListener('click', (event) => {
     if (isDeathScreenVisible) {
