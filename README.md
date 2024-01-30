@@ -22,6 +22,6 @@ Vihreä ovi sijaitsee kangasalustan reunalla. Se on pelin tavoite, ja pelaajan o
 <details>
   <summary>Screenshot</summary>
 
-  ![img](https://fakeimg.pl/200)
+  ![img]https://github.com/coderamongus/CanvasApi/assets/123076970/98cf9827-1c62-4062-8fb9-49a24d62e38f)
 </details>
 * Onnea matkaa sulle!
