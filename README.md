@@ -19,9 +19,9 @@ Vihreä ovi sijaitsee kangasalustan reunalla. Se on pelin tavoite, ja pelaajan o
 * Projektin seuraava askel on määritellä esteiden, purppuran tasohyppelyn ja vihreän oven käyttäytyminen tarkemmin.
 
 # Kuvakaappauksia:
-<details><summary>3lvl. Spoilers!!!</summary>
-    <pre>
-    ![Näyttökuva 2024-01-30 124914](https://github.com/coderamongus/CanvasApi/assets/123076970/567a3c4c-c4db-4166-ac39-16bcb10864ea)
-    </pre>
-   </details>
+details>
+  <summary>Screenshot</summary>
+
+  ![img](https://fakeimg.pl/200)
+</details>
 * Onnea matkaa sulle!
