@@ -338,6 +338,24 @@ function gameLoop() {
         ctx.fillStyle = movingPlatform2.color;
         ctx.fillRect(movingPlatform2.x, movingPlatform2.y, movingPlatform2.width, movingPlatform2.height);
     }
+    if (level === 2 && player.x > 1450 && player.y > 300) {
+        ctx.save();
+
+        
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = 'white';
+        ctx.font = '25px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('Congratulations! You completed the game!', canvas.width / 2, canvas.height / 2);
+
+        ctx.restore(); 
+
+        return;
+    }
 
     setTimeout(() => {
         requestAnimationFrame(gameLoop);
