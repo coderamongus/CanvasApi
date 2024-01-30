@@ -1,7 +1,7 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-const player = {
+const player = {/*Creating the player*/
     x: 50,
     y: 50,
     width: 30,
@@ -19,7 +19,7 @@ const player = {
     isAlive: true,
 };
 
-const movingPlatform = {
+const movingPlatform = {/*Creating a new moving purple object*/
     x: 100,
     y: 30,
     width: 200,
@@ -28,7 +28,7 @@ const movingPlatform = {
     velocityX: 2,
 };
 
-const movingPlatform2 = {
+const movingPlatform2 = {/*Creating a new red moving object*/
     x: 200,
     y: 295,
     width: 30,
@@ -57,7 +57,7 @@ const boxes = [
         { x: 850, y: 360, width: 50, height: 20, color: 'red' },
         { x: 850, y: 290, width: 50, height: 20, color: 'red' },
         { x: 100, y: 230, width: 50, height: 50, color: 'green' },
-    ],
+    ],/*Level 1*/
     [
         { x: 1, y: 1, width: 1600, height: 20, color: 'brown' },
         { x: 1, y: 380, width: 1600, height: 20, color: 'brown' },
@@ -71,7 +71,7 @@ const boxes = [
         { x: 500, y: 200, width: 150, height: 20, color: 'brown ' },
         { x: 1200, y: 1, width: 50, height: 300, color: 'brown ' },
         { x: 0, y: 20, width: 1200, height: 10, color: 'red' },
-    ],
+    ],/*Level 2*/
     [
         {x: 1, y: 1, width: 1600, height: 20, color: 'red'},
         {x: 1400, y: 20, width: 200, height: 20, color: 'brown'},
@@ -106,7 +106,7 @@ const boxes = [
         { x: 1125, y: 295, width: 40, height: 20, color: 'brown' },
         movingPlatform, movingPlatform2
     ],
-];
+];/*3rd lvl*/
 
 const gravity = -0.2;
 
@@ -275,7 +275,7 @@ function updateMovingPlatform2() {
 }
 
 
-function updateMovingPlatforms() {
+function updateMovingPlatforms() { /*Cycle for the moving platforms*/
     movingPlatform.x += movingPlatform.velocityX;
     movingPlatform2.x += movingPlatform2.velocityX;
 
@@ -288,7 +288,7 @@ function updateMovingPlatforms() {
     }
 }
 
-function gameLoop() {
+function gameLoop() { /*Cycle for the game*/
     if (!player.isAlive) {
         if (!isDeathScreenVisible) {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
@@ -338,21 +338,18 @@ function gameLoop() {
         ctx.fillStyle = movingPlatform2.color;
         ctx.fillRect(movingPlatform2.x, movingPlatform2.y, movingPlatform2.width, movingPlatform2.height);
     }
-    if (level === 2 && player.x > 1450 && player.y > 300) {
+    if (level === 2 && player.x > 1450 && player.y > 300) { /*winner screen*/
         ctx.save();
-
-        
         ctx.setTransform(1, 0, 0, 1, 0, 0);
-
+        
         ctx.fillStyle = 'rgba(76, 175, 80, 1)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-
         ctx.fillStyle = 'white';
-        ctx.font = '25px Arial';
+        ctx.font = '22px Geneva';
         ctx.textAlign = 'center';
         ctx.fillText('Congratulations! You completed the game!', canvas.width / 2, canvas.height / 2);
 
-        ctx.restore(); 
+        ctx.restore();
 
         return;
     }
