@@ -344,7 +344,7 @@ function gameLoop() {
         
         ctx.setTransform(1, 0, 0, 1, 0, 0);
 
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        ctx.fillStyle = 'rgba(76, 175, 80, 1)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.fillStyle = 'white';
