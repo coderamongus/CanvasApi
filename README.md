@@ -1,5 +1,5 @@
 API Canvas projekti
-Tämä projekti on yhteistyö #CodeAmongus - ja #UserGotem -tiimien välillä. Projektin tavoitteena on luoda API Canvas-projekti, jossa on esteitä, punaiset, violetti platformeri, sininen henkilö ja vihreä ovi.
+Tämä projekti on yhteistyö ##CodeAmongus - ja ##UserGotem -tiimien välillä. Projektin tavoitteena on luoda API Canvas-projekti, jossa on esteitä, punaiset, violetti platformeri, sininen henkilö ja vihreä ovi.
 
 Esteet
 Esteet ovat punaiset ja ne sijaitsevat canvas-alustan eri puolilla. Esteet estävät henkilön etenemisen, joten henkilön on kierrettävä ne tai hypättävä niiden yli.
