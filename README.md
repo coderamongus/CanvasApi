@@ -14,7 +14,8 @@ Purppura tasohyppely: Violetti tasohyppely sijaitsee kanvasalustan keskellä. Ta
 # Sininen hahmo: 
 Sininen hahmo on pelaajan ohjaama hahmo. Tavoitteena on saada hahmo vihreälle ovelle.
 
-# Vihreä ovi: Vihreä ovi sijaitsee kangasalustan reunalla. Se on pelin tavoite, ja pelaajan on saavutettava se voittaakseen.
+# Vihreä ovi: 
+Vihreä ovi sijaitsee kangasalustan reunalla. Se on pelin tavoite, ja pelaajan on saavutettava se voittaakseen.
 * Projektin seuraava askel on määritellä esteiden, purppuran tasohyppelyn ja vihreän oven käyttäytyminen tarkemmin.
 
 # Kuvakaappauksia:
