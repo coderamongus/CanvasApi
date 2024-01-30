@@ -16,7 +16,7 @@ Rahoitus
 Seuraavat vaiheet
 Projektin seuraava askel on määritellä esteiden, purppuran tasohyppelyn ja vihreän oven käyttäytyminen tarkemmin.
 
-Kuvakaappauksia:
+# Kuvakaappauksia:
 
 ![Näyttökuva 2024-01-30 124914](https://github.com/coderamongus/CanvasApi/assets/123076970/567a3c4c-c4db-4166-ac39-16bcb10864ea)
 
