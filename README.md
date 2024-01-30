@@ -1,17 +1,22 @@
-API Canvas projekti
-Tämä projekti on yhteistyö ##CodeAmongus - ja ##UserGotem -tiimien välillä. Projektin tavoitteena on luoda API Canvas-projekti, jossa on esteitä, punaiset, violetti platformeri, sininen henkilö ja vihreä ovi.
+API Canvas Project
+Päämäärä
+Luo API Canvas -projekti, jossa on esteitä, punainen, violetti tasohyppely, sininen hahmo ja vihreä ovi.
 
-Esteet
-Esteet ovat punaiset ja ne sijaitsevat canvas-alustan eri puolilla. Esteet estävät henkilön etenemisen, joten henkilön on kierrettävä ne tai hypättävä niiden yli.
+Pelaajat, jotka haluavat haastavan ja jännittävän pelikokemuksen.
+Asiakkaiden ongelma
+Pelaajat etsivät haastavaa ja jännittävää pelikokemusta.
 
-Violetti platformeri
-Violetti platformeri sijaitsee canvas-alustan keskellä. Platformeri on liikkuva, joten henkilön on oltava varovainen ettei putoa.
+Tuotteen tarjonnan arvo
+API Canvas -projekti tarjoaa pelaajille haastavan ja jännittävän pelikokemuksen. Peli sisältää esteitä, jotka haittaavat pelaajan edistymistä, sekä liikkuvan tasohyppelyn, joka lisää haastetta. Pelaajan on varottava putoamasta tai hänen on aloitettava peli alusta. Vihreä ovi on pelin tavoite, ja pelaajan on saavutettava se voittaakseen.
 
-Sininen henkilö
-Sininen henkilö on pelaajan ohjaama hahmo. Henkilön on tarkoitus päästä vihreän oven luokse.
-
-Vihreä ovi
-Vihreä ovi on canvas-alustan reunassa. 
+Ainesosat
+Esteet: Kanvasalustan eri puolille on asetettu punaisia ​​esteitä. Nämä esteet estävät pelaajan edistymistä, joten pelaajan tulee joko kiertää ne tai hypätä niiden yli.
+Purppura tasohyppely: Violetti tasohyppely sijaitsee kanvasalustan keskellä. Tasohyppely liikkuu, joten pelaajan on varottava putoamasta.
+Sininen hahmo: Sininen hahmo on pelaajan ohjaama hahmo. Tavoitteena on saada hahmo vihreälle ovelle.
+Vihreä ovi: Vihreä ovi sijaitsee kangasalustan reunalla. Se on pelin tavoite, ja pelaajan on saavutettava se voittaakseen.
+Rahoitus
+Seuraavat vaiheet
+Projektin seuraava askel on määritellä esteiden, purppuran tasohyppelyn ja vihreän oven käyttäytyminen tarkemmin.
 
 Kuvakaappauksia:
 
