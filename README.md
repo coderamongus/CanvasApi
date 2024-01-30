@@ -11,7 +11,8 @@ API Canvas -projekti tarjoaa pelaajille haastavan ja jännittävän pelikokemuks
 Esteet: Kanvasalustan eri puolille on asetettu punaisia ​​esteitä. Nämä esteet estävät pelaajan edistymistä, joten pelaajan tulee joko kiertää ne tai hypätä niiden yli.
 Purppura tasohyppely: Violetti tasohyppely sijaitsee kanvasalustan keskellä. Tasohyppely liikkuu, joten pelaajan on varottava putoamasta.
 
-# Sininen hahmo: Sininen hahmo on pelaajan ohjaama hahmo. Tavoitteena on saada hahmo vihreälle ovelle.
+# Sininen hahmo: 
+Sininen hahmo on pelaajan ohjaama hahmo. Tavoitteena on saada hahmo vihreälle ovelle.
 
 # Vihreä ovi: Vihreä ovi sijaitsee kangasalustan reunalla. Se on pelin tavoite, ja pelaajan on saavutettava se voittaakseen.
 * Projektin seuraava askel on määritellä esteiden, purppuran tasohyppelyn ja vihreän oven käyttäytyminen tarkemmin.
