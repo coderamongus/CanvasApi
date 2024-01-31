@@ -46,25 +46,6 @@
             margin: 0; 
         }
 
-        #gameCanvas {
-            border: 4px solid #000;
-            width: 1200px;
-            height: 800px;
-            background-color: white;
-        }
-
-        #respawnMessage,
-        #endGameMessage {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: white;
-            text-align: center;
-            display: none;
-        }
-
         #levelButtons {
             position: absolute;
             top: 50%;
@@ -99,6 +80,32 @@
             z-index: -1; 
             padding: 200px; 
         }
+
+        #canvas-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #gameCanvas {
+            border: 4px solid #000;
+            width: 1200px;
+            height: 800px;
+            background-color: white;
+        }
+
+        #respawnMessage,
+        #endGameMessage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: white;
+            text-align: center;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -114,11 +121,9 @@
         </div>
         <div id="respawnMessage">You died! Click anywhere to respawn.</div>
     </div>
-    <center>
-        <div id="canvas-container" style="display: none;">
-            <canvas id="gameCanvas" width="1600" height="400"></canvas>
-        </div>
-    </center>
+    <div id="canvas-container" style="display: none;">
+        <canvas id="gameCanvas" width="1600" height="400"></canvas>
+    </div>
     <script src="platformer.js"></script>
 </body>
 </html>
