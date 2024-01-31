@@ -112,6 +112,20 @@ const gravity = -0.2;
 
 let isDeathScreenVisible = false;
 
+function enableCanvasAndLoadLevel() {
+    const canvasContainer = document.getElementById('canvas-container');
+    const levelButtons = document.getElementById('levelButtons');
+    const titleContainer = document.getElementById('titleContainer');
+    const taustaContainer = document.getElementById('tausta-container');
+
+    canvasContainer.style.display = 'block'; 
+    levelButtons.style.display = 'none'; 
+    titleContainer.style.display = 'none';
+    taustaContainer.style.display = 'none';
+
+    loadLevel(0); 
+}
+
 function showRespawnMessage() {
     const respawnMessage = document.getElementById('respawnMessage');
     respawnMessage.style.display = 'block';

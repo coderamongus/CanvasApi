@@ -112,9 +112,13 @@
             <br>
             <button onclick="enableCanvasAndLoadLevel()">Start Game</button>
         </div>
-        <canvas id="gameCanvas" width="1600" height="400" style="display: none;"></canvas>
         <div id="respawnMessage">You died! Click anywhere to respawn.</div>
-        <script src="platformer.js"></script>
     </div>
+    <center>
+        <div id="canvas-container" style="display: none;">
+            <canvas id="gameCanvas" width="1600" height="400"></canvas>
+        </div>
+    </center>
+    <script src="platformer.js"></script>
 </body>
 </html>
