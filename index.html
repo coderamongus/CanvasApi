@@ -32,10 +32,18 @@
             background-attachment: fixed;
         }
 
+        #titleContainer {
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block; 
+        }
+
         h1 {
             animation: colorChange 3.5s infinite;
             font-family: 'Geneva';
-            text-shadow: 1px 1px 1px black; 
+            text-shadow: 1px 1px 1px white; 
+            margin: 0; 
         }
 
         #gameCanvas {
@@ -96,7 +104,9 @@
 <body>
     <div id="tausta-container">
         <div id="levelButtons">
-            <h1>Platform Adventure</h1>
+            <div id="titleContainer">
+                <h1>Platform Adventure</h1>
+            </div>
             <img src="images/logo.png">
             <br>
             <br>
