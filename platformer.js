@@ -129,11 +129,13 @@ function enableCanvasAndLoadLevel() {
 function showRespawnMessage() {
     const respawnMessage = document.getElementById('respawnMessage');
     respawnMessage.style.display = 'block';
+    console.log("Showing Respawn Message");
 }
 
 function hideRespawnMessage() {
     const respawnMessage = document.getElementById('respawnMessage');
     respawnMessage.style.display = 'none';
+    console.log("Hiding Respawn Message");
 }
 
 function handleCollision(entity1, entity2) {
