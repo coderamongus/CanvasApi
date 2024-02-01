@@ -129,9 +129,15 @@ function enableCanvasAndLoadLevel() {
 function showRespawnMessage() {
     const respawnMessage = document.getElementById('respawnMessage');
     respawnMessage.style.display = 'block';
-    console.log("Showing Respawn Message");
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.fillStyle = 'whitesmoke';
+    ctx.font = '35px Veranda';
+    ctx.textAlign = 'center';
+    ctx.fillText('You died! Click anywhere to respawn.', canvas.width / 2, canvas.height / 2);
+    ctx.restore();
 }
-
+    
 function hideRespawnMessage() {
     const respawnMessage = document.getElementById('respawnMessage');
     respawnMessage.style.display = 'none';
