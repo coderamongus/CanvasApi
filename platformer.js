@@ -1,6 +1,8 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
-
+const victorySound = document.getElementById('Voitto');
+let isVictorySoundPlayed = false;
+const deathSound = document.getElementById('deathSound');
 const player = {/*Creating the player*/
     x: 50,
     y: 50,
@@ -136,6 +138,8 @@ function showRespawnMessage() {
     ctx.textAlign = 'center';
     ctx.fillText('You died! Click anywhere to respawn.', canvas.width / 2, canvas.height / 2);
     ctx.restore();
+
+    deathSound.play(); /* Play the death sound*/
 }
     
 function hideRespawnMessage() {
@@ -263,10 +267,18 @@ document.addEventListener('keydown', (event) => {
             if (!player.isJumping) {
                 player.velocityY = player.jumpPower;
                 player.isJumping = true;
+                playJumpSound();
             }
             break;
     }
 });
+
+function playJumpSound() {
+    const jumpSound = document.getElementById('jumpSound');
+    jumpSound.currentTime = 0;
+    jumpSound.play();
+    
+}
 
 document.addEventListener('keyup', (event) => {
     switch (event.code) {
@@ -297,7 +309,7 @@ function updateMovingPlatform2() {
 }
 
 
-function updateMovingPlatforms() { /*Cycle for the moving platforms*/
+function updateMovingPlatforms() {
     movingPlatform.x += movingPlatform.velocityX;
     movingPlatform2.x += movingPlatform2.velocityX;
 
@@ -310,7 +322,7 @@ function updateMovingPlatforms() { /*Cycle for the moving platforms*/
     }
 }
 
-function gameLoop() { /*Cycle for the game*/
+function gameLoop() {
     if (!player.isAlive) {
         if (!isDeathScreenVisible) {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
@@ -360,21 +372,22 @@ function gameLoop() { /*Cycle for the game*/
         ctx.fillStyle = movingPlatform2.color;
         ctx.fillRect(movingPlatform2.x, movingPlatform2.y, movingPlatform2.width, movingPlatform2.height);
     }
-    if (level === 2 && player.x > 1450 && player.y > 300) { /*winner screen*/
-        ctx.save();
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-        
-        ctx.fillStyle = 'rgba(76, 175, 80, 1)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = 'white';
-        ctx.font = '22px Geneva';
-        ctx.textAlign = 'center';
-        ctx.fillText('Congratulations! You completed the game!', canvas.width / 2, canvas.height / 2);
-
-        ctx.restore();
-
-        return;
+    if (level === 2 && player.x > 1450 && player.y > 300) {
+    if (!isVictorySoundPlayed) {
+        victorySound.play();
+        isVictorySoundPlayed = true;
     }
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.fillStyle = 'rgba(76, 175, 80, 1)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'white';
+    ctx.font = '22px Geneva';
+    ctx.textAlign = 'center';
+    ctx.fillText('Congratulations! You completed the game!', canvas.width / 2, canvas.height / 2);
+    ctx.restore();
+    return;
+}
 
     setTimeout(() => {
         requestAnimationFrame(gameLoop);
